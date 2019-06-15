@@ -4,6 +4,7 @@ describe('todos', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
+    console.log('e2e app.spec.ts: getGreeting:',getGreeting());
     getGreeting().contains('Welcome to todos!');
   });
 });
