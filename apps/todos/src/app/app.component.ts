@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 interface Todo {
   title: string;
@@ -16,13 +17,27 @@ export class AppComponent {
   // added this to fix the old unit tests that the tutorial wanted to be deleted
   title: string = 'todos';
 
-  constructor(){
+  constructor(private http: HttpClient){
+    this.fetch();
+  }
 
+  fetch(){
+    this.http.get<Todo[]>('/api/todos').subscribe(t => {
+      (this.todos = t)
+      console.log('AppComponent: fetch: t:',t);
+
+    });
   }
 
   addTodo() {
+    /*
     this.todos.push({
       title: `New todo ${Math.floor(Math.random() * 1000)}`
+    });
+    */
+
+    this.http.post('/api/addTodo', {}).subscribe(() => {
+      this.fetch();
     });
   }
 }
