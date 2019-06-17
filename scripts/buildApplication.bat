@@ -1,5 +1,5 @@
-cd ..
+REM cd ..
 
 ng build nest-app-api
 
-cd scripts
+REM cd scripts

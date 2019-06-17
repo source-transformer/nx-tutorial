@@ -1,5 +1,5 @@
-cd ..
+REM cd ..
 
 ng e2e todos-e2e --headless
 
-cd scripts
+REM cd scripts

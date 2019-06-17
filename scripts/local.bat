@@ -1,4 +1,4 @@
-cd ..
+REM cd ..
 ng serve
 
-cd scripts
+REM cd scripts

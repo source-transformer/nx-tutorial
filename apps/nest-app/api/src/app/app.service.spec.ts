@@ -15,7 +15,12 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return "Welcome to api!"', () => {
-      expect(service.getData()).toEqual({message: 'Welcome to api!'});
+
+      console.log('service.getData():',service.getData());
+
+      //expect(service.getData()).toEqual({message: 'Welcome to api!'});
+      //[{"title": "Todo 1"}, {"title": "Todo 2"}]
+      expect(service.getData().length).toEqual(2);
     });
   });
 });
